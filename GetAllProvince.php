@@ -1,7 +1,7 @@
 <?php
-include("ConnectToDb.php");
+include('ConnectToDb.php');
 
- $result= mysqli_query($con,"SELECT * FROM province ");
+ $result= mysql_query($con,"SELECT * FROM province ");
 /* create one master array of the records */
 	$posts = array();
 	if(mysql_num_rows($result)) {
