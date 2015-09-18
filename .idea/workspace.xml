@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ff9d7a1-3fd6-47cc-861e-a9b4a73bd30c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConnectToDB.php" afterPath="$PROJECT_DIR$/ConnectToDB.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GetAllProvince.php" afterPath="$PROJECT_DIR$/GetAllProvince.php" />
     </list>
     <ignored path="c4g.iws" />
@@ -29,10 +28,10 @@
       <file leaf-file-name="GetAllProvince.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GetAllProvince.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5013405">
-              <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.6380697">
+              <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
               <folding>
-                <marker date="1442615418828" expanded="true" signature="58:80" placeholder="select * fro..province..." />
+                <marker date="1442615741499" expanded="true" signature="63:85" placeholder="select * fro..province..." />
               </folding>
             </state>
           </provider>
@@ -476,12 +475,12 @@
       <option name="number" value="Default" />
       <updated>1442606882917</updated>
       <workItem from="1442606884238" duration="1004000" />
-      <workItem from="1442610336607" duration="4130000" />
+      <workItem from="1442610336607" duration="4449000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5134000" />
+    <option name="totallyTimeSpent" value="5453000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -550,10 +549,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GetAllProvince.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5013405">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.6380697">
+          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
           <folding>
-            <marker date="1442615418828" expanded="true" signature="58:80" placeholder="select * fro..province..." />
+            <marker date="1442615741499" expanded="true" signature="63:85" placeholder="select * fro..province..." />
           </folding>
         </state>
       </provider>
