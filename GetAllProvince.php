@@ -14,6 +14,6 @@ include('ConnectToDb.php');
 		echo json_encode(array('posts'=>$posts));
 	
 
- mysql_close();
+ @mysql_close($con);
 
 ?>
