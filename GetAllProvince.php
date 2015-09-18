@@ -1,15 +1,18 @@
 <?php
 require_once('ConnectToDb.php');
 
-$result = mysql_query("select * from province");
+$sql = "SELECT * FROM province";
+$result = mysqli_query($conn, $sql);
 
 $province_arr = array();
-if(mysql_num_rows($result)> 0){
-    while($row = mysql_fetch_array($result)){
+
+if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
+        echo $row;
         array_push($province_arr, array($row));
     }
-
-    echo json_encode($province_arr);
 }
+
+echo json_encode($province_arr);
 
 ?>

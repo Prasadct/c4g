@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ff9d7a1-3fd6-47cc-861e-a9b4a73bd30c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConnectToDB.php" afterPath="$PROJECT_DIR$/ConnectToDB.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GetAllProvince.php" afterPath="$PROJECT_DIR$/GetAllProvince.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="c4g.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,10 +30,10 @@
       <file leaf-file-name="GetAllProvince.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GetAllProvince.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6380697">
-              <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.6836461">
+              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
               <folding>
-                <marker date="1442615741499" expanded="true" signature="63:85" placeholder="select * fro..province..." />
+                <marker date="1442616955293" expanded="true" signature="48:70" placeholder="SELECT * FRO..province..." />
               </folding>
             </state>
           </provider>
@@ -52,8 +54,8 @@
       <file leaf-file-name="ConnectToDB.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ConnectToDB.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.6415094">
-              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state vertical-scroll-proportion="-3.8490567">
+              <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -475,12 +477,12 @@
       <option name="number" value="Default" />
       <updated>1442606882917</updated>
       <workItem from="1442606884238" duration="1004000" />
-      <workItem from="1442610336607" duration="4449000" />
+      <workItem from="1442610336607" duration="5653000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5453000" />
+    <option name="totallyTimeSpent" value="6657000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -529,6 +531,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ConnectToDB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8490567">
+          <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test2.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.230769">
@@ -539,20 +549,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ConnectToDB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6415094">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GetAllProvince.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6380697">
-          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.6836461">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
           <folding>
-            <marker date="1442615741499" expanded="true" signature="63:85" placeholder="select * fro..province..." />
+            <marker date="1442616955293" expanded="true" signature="48:70" placeholder="SELECT * FRO..province..." />
           </folding>
         </state>
       </provider>
