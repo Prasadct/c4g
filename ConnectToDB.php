@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost","cropadvisor","cropadvisor","");
+$con = mysqli_connect("http://128.199.125.48/","cropadvisor","cropadvisor");
 mysql_select_db('cropadvisor',$con);
 if (mysqli_connect_errno()) 
 {
