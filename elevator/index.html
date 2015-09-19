@@ -601,7 +601,17 @@
                 </div>
                 
                 <div class="container">
-                   
+                   <form action=""> 
+					<select name="customers" onchange="addTable(this.value)">
+					<option value="">Select a crop:</option>
+					<option value="1">Mango</option>
+					<option value="2">Banana</option>
+					<option value="3">Carrot</option>
+					</select>
+				</form
+				<div id="txtHint">Problem info will be listed here...</div>
+				<div id="DynamicTable">
+				</div>
                 </div>
                 
                 
@@ -970,17 +980,7 @@
                         </div>
                     </div>
                 </div>
-				<form action=""> 
-					<select name="customers" onchange="addTable(this.value)">
-					<option value="">Select a crop:</option>
-					<option value="1">Mango</option>
-					<option value="2">Banana</option>
-					<option value="3">Carrot</option>
-					</select>
-				</form
-				<div id="txtHint">Problem info will be listed here...</div>
-				<div id="DynamicTable">
-				</div>
+				
 				
 
                 
