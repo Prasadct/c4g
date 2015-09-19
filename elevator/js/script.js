@@ -21,11 +21,10 @@ function addTableReportDisease(str) {
         url: 'http://128.199.125.48/GetDetailsForMainType.php?mainType=ReportDisease&cropId='+str,
         dataType: 'application/json',
         success: function(data){
+            var data = JSON.parse(data);
             for(var i = 0; i < data.length; i++) {
-                var obj = data[i];
-                alert(JSON.stringify(data));
-                alert(obj.id, +" "+obj.des_id+" "+obj.user_id+" "+obj.crop_id+" "+obj.is_solved);
-                console.log(obj.id);
+                var obj =data[i];
+                alert(obj);
             }
         },
         error: function (e) {
