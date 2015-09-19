@@ -54,6 +54,7 @@ function addTable(str) {
 
 }
 function addTableReportDisease(str) {
+    $('.report').hide();
     $.ajax({
         type: 'GET',
         url: 'http://128.199.125.48/GetDetailsForMainType.php?mainType=ReportDisease&cropId='+str,
@@ -61,8 +62,7 @@ function addTableReportDisease(str) {
         success: function(data) {
             for(var i = 0; i < data.length ; i++){
                 console.log(JSON.stringify(data[i]));
-                $('.report').hide();
-                $('#row_entry').after('<tr class="report"><td>'+data['title']+'</td><th>'+data['details']+'</th><th>http://128.199.125.48/photos/'+data['image']+'</th><th>Status</th></tr>');
+                $('#row_entry').after('<tr class="report"><td>'+data['title']+'</td><th>'+data['details']+'</th><th><img src="http://128.199.125.48/photos/'+data['image']+'"/></th><th>Status</th></tr>');
             }
         },
         data: {},
