@@ -32,7 +32,7 @@ xmlhttp.onreadystatechange=function()
     {
 var table=document.getElementById("excelDataTable");
 	var obj = xmlhttp.responseText;
-	var columns = addAllColumnHeaders(obj, table);
+	//var columns = addAllColumnHeaders(obj, table);
 
     for (var i = 0 ; i < obj.length ; i++) {
         var row$ = $('<tr/>');
@@ -54,23 +54,7 @@ xmlhttp.send();
     
 }
 
-function addAllColumnHeaders(myList,selector)
-{
-    var columnSet = [];
-    var headerTr$ = $('<tr/>');
 
-    for (var i = 0 ; i < myList.length ; i++) {
-        var rowHash = myList[i];
-        for (var key in rowHash) {
-            if ($.inArray(key, columnSet) == -1){
-                columnSet.push(key);
-                headerTr$.append($('<th/>').html(key));
-            }
-        }
-    }
-    $(selector).append(headerTr$);
-
-}​
  function DeleteRows() {
 	 
 	
