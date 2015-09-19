@@ -270,8 +270,9 @@ and (max-width : 1199px) {
 
 .section-modal .modal-content {
     padding: 100px 0 !important;
-    min-height: 100%;
-	min-width: 50%;
+	top: 50px;
+    height: 75%;
+	width: 50%;
     border: 0 !important;
     border-radius: 0;
     background-clip: border-box;
@@ -944,7 +945,7 @@ and (max-width : 100px) {
 
 .testimonial {
     margin-bottom: 80px;
-	width=0%;
+	width=100%;
 }
 
 .testimonial h4 {
