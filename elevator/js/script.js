@@ -31,20 +31,32 @@ xmlhttp.onreadystatechange=function()
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
 var table=document.getElementById("excelDataTable");
-	var obj = xmlhttp.responseText;
-	var columns = addAllColumnHeaders(obj, table);
+	var tags = $.parseJSON(xmlhttp.responseText);
+	var myTableDiv = document.getElementById("DynamicTable");
+            
+        var table = document.createElement('TABLE');
+        table.border='1';
+        
+        var tableBody = document.createElement('TBODY');
+        table.appendChild(tableBody);
+            
+        for (var i=0; i<3; i++){
+              var tr = document.createElement('TR');
+              tableBody.appendChild(tr);
+        
+              
+                      var td = document.createElement('TD');
+                      td.width='75';
+                      td.appendChild(document.createTextNode(tags[i].crop_id));
+                      tr.appendChild(td);
 
-    for (var i = 0 ; i < obj.length ; i++) {
-        var row$ = $('<tr/>');
-        for (var colIndex = 0 ; colIndex < columns.length ; colIndex++) {
-            var cellValue = obj[i][columns[colIndex]];
-
-            if (cellValue == null) { cellValue = ""; }
-
-            row$.append($('<td/>').html(cellValue));
-        }
-        $(selector).append(row$);
-    }
+		  var td1 = document.createElement('TD');
+                      td1.width='75';
+                      td1.appendChild(document.createTextNode(tags[i].Description));
+                      tr.appendChild(td1);
+              
+        }
+        myTableDiv.appendChild(table);
 }
     }
   
@@ -54,25 +66,8 @@ xmlhttp.send();
     
 }
 
-function addAllColumnHeaders(myList,selector)
-{
-    var columnSet = [];
-    var headerTr$ = $('<tr/>');
 
-    for (var i = 0 ; i < myList.length ; i++) {
-        var rowHash = myList[i];
-        for (var key in rowHash) {
-            if ($.inArray(key, columnSet) == -1){
-                columnSet.push(key);
-                headerTr$.append($('<th/>').html(key));
-            }
-        }
-    }
-    $(selector).append(headerTr$);
-
-    return columnSet;
-}â€‹
  function DeleteRows() {
-	 
+
 	
  }
