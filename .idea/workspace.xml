@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/GetAllProvince.php" description="/* grab the posts from the db */" line="4" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0ff9d7a1-3fd6-47cc-861e-a9b4a73bd30c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GetAllProvince.php" afterPath="$PROJECT_DIR$/GetAllProvince.php" />
@@ -29,10 +32,10 @@
       <file leaf-file-name="GetAllProvince.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GetAllProvince.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5013405">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.72922254">
+              <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
               <folding>
-                <marker date="1442626826647" expanded="true" signature="119:141" placeholder="SELECT * FRO..province..." />
+                <marker date="1442627058179" expanded="true" signature="119:141" placeholder="SELECT * FRO..province..." />
               </folding>
             </state>
           </provider>
@@ -490,12 +493,12 @@
       <option name="number" value="Default" />
       <updated>1442606882917</updated>
       <workItem from="1442606884238" duration="1004000" />
-      <workItem from="1442610336607" duration="8009000" />
+      <workItem from="1442610336607" duration="8238000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9013000" />
+    <option name="totallyTimeSpent" value="9242000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -575,10 +578,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GetAllProvince.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5013405">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.72922254">
+          <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
           <folding>
-            <marker date="1442626826647" expanded="true" signature="119:141" placeholder="SELECT * FRO..province..." />
+            <marker date="1442627058179" expanded="true" signature="119:141" placeholder="SELECT * FRO..province..." />
           </folding>
         </state>
       </provider>
