@@ -2,24 +2,32 @@
 
 include( dirname(__FILE__)."/ConnectToDB.php");
 
-$number_of_posts = isset($_GET['cropType']) ? intval($_GET['cropType']) : 0;
-
+$mainType = $_GET['mainType'] ;
+$cropId= $_GET['cropId'] ;
 
 	/* grab the posts from the db */
-	if ($number_of_posts == 0)
+	if ($mainType == "Disease")
 	{
-		 $result= mysqli_query($con,"SELECT * FROM crop ");
+		 $result= mysqli_query($con,"SELECT * FROM disease where crop_id='$cropId' ");
 	}
-	else
+	elseif($mainType == "Detail")
 	{
-		 $result= mysqli_query($con,"SELECT * FROM crop where type = '$number_of_posts'");
+		 $result= mysqli_query($con,"SELECT * FROM detail where crop_id = '$cropId'");
+	}
+	elseif($mainType == "ReportDisease")
+	{
+		$result= mysqli_query($con,"SELECT * FROM reprotdesease where crop_id = '$cropId'");
+	}
+	elseif($mainType == "Support")
+	{
+		$result= mysqli_query($con,"SELECT * FROM support where crop_id = '$cropId'");
 	}
 	
 	
 
 	/* create one master array of the records */
 	$posts = array();
-	if(mysqli_num_rows($result)) {
+	if(isset($result	) && mysqli_num_rows($result)) {
 		while($post = mysqli_fetch_array($result)) {
 			$posts[] = $post;
 		}
