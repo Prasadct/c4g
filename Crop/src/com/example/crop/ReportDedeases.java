@@ -1,124 +1,263 @@
 package com.example.crop;
 
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
 import java.io.File;
-import java.text.SimpleDateFormat;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.Locale;
+import java.util.List;
+import java.util.Random;
 
 import android.app.Activity;
-import android.content.ContextWrapper;
 import android.content.Intent;
-import android.graphics.Bitmap.Config;
-import android.net.Uri;
+import android.graphics.Bitmap;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
-public class ReportDedeases extends Activity{
-
+public class ReportDedeases extends Activity {
+	private ImageView mImage;
 	EditText et_des;
-	Button btn_photo,btn_submit;
-	
-	 // Camera activity request codes
-    private static final int CAMERA_CAPTURE_IMAGE_REQUEST_CODE = 100;
-    private static final int CAMERA_CAPTURE_VIDEO_REQUEST_CODE = 200;
-    public static final String IMAGE_DIRECTORY_NAME = "Android File Upload";
-    public static final int MEDIA_TYPE_IMAGE = 1;
-    public static final int MEDIA_TYPE_VIDEO = 2;
-  
-    private Uri fileUri; // file url to store image/video
-	
+	Button btn_photo, btn_submit;
+	private static final int CAMERA_PIC_REQUEST = 1111;
+
+	private int serverResponseCode = 0;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.report_deseases);
-		
-		et_des=(EditText)findViewById(R.id.et_des);
-		
-		btn_photo=(Button)findViewById(R.id.btn_photo);
-		btn_submit=(Button)findViewById(R.id.btn_submit);
-		
+
+		et_des = (EditText) findViewById(R.id.et_des);
+		mImage = (ImageView) findViewById(R.id.camera_image);
+		btn_photo = (Button) findViewById(R.id.btn_photo);
+		btn_submit = (Button) findViewById(R.id.btn_submit);
+
 		btn_photo.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				ContextWrapper cw = new ContextWrapper(getApplicationContext());
-
-//				File directory = cw.getDir("Captured_image ",
-//						Context.MODE_APPEND);
-//
-//				File f = new File(directory.toString());
-//				f.mkdirs();
-//				File[] file = f.listFiles();
-//
-//				Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-//				File photoFile;
-//				Intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file[0]));
-//				startActivityForResult(intent, 0);
-	
-//				   Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//				   
-//			      Uri  fileUri = getOutputMediaFileUri(1);
-//			  
-//			        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
-//			  
-//			        // start the image capture Intent
-//			        startActivityForResult(intent, CAMERA_CAPTURE_IMAGE_REQUEST_CODE);
-				
-			}});
+				Intent intent = new Intent(
+						android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+				startActivityForResult(intent, CAMERA_PIC_REQUEST);
+			}
+		});
 	}
-	
-	
-	   private void captureImage() {
-	        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-	  
-	       fileUri = getOutputMediaFileUri(1);
-	  
-	        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
-	  
-	        // start the image capture Intent
-	        startActivityForResult(intent, CAMERA_CAPTURE_IMAGE_REQUEST_CODE);
-	    }
-	   public Uri getOutputMediaFileUri(int type) {
-	        return Uri.fromFile(getOutputMediaFile(type));
-	    }
-	
-	   private static File getOutputMediaFile(int type) {
-		   
-	        // External sdcard location
-	        File mediaStorageDir = new File(
-	                Environment
-	                        .getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
-	                IMAGE_DIRECTORY_NAME);
-	  
-	        // Create the storage directory if it does not exist
-	        if (!mediaStorageDir.exists()) {
-	            if (!mediaStorageDir.mkdirs()) {
-	                return null;
-	            }
-	        }
-	  
-	        // Create a media file name
-	        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss",
-	                Locale.getDefault()).format(new Date());
-	        File mediaFile;
-	        if (type == MEDIA_TYPE_IMAGE) {
-	            mediaFile = new File(mediaStorageDir.getPath() + File.separator
-	                    + "IMG_" + timeStamp + ".jpg");
-	        } else if (type == MEDIA_TYPE_VIDEO) {
-	            mediaFile = new File(mediaStorageDir.getPath() + File.separator
-	                    + "VID_" + timeStamp + ".mp4");
-	        } else {
-	            return null;
-	        }
-	  
-	        return mediaFile;
-	    }
-	   
-	   
+
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode == CAMERA_PIC_REQUEST) {
+			// 2
+			Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
+			mImage.setImageBitmap(thumbnail);
+			// 3
+			ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+			thumbnail.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+			// 4
+
+			String filepath = Environment.getExternalStorageDirectory()
+					.getAbsolutePath() + "/Crop";
+			File file = new File(filepath);
+			if (!file.exists()) {
+				file.mkdir();
+			}
+			
+			Random rn = new Random();
+			int num = rn.nextInt(10000000) + 1;
+			String date=new Date().toString();
+			String imageName= date+num+".jpg";
+
+			File file1 = new File(file, imageName);
+
+			try {
+				file1.createNewFile();
+				FileOutputStream fo = new FileOutputStream(file1);
+				// 5
+				fo.write(bytes.toByteArray());
+				fo.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			FakeNetLoader fl = new FakeNetLoader();
+			fl.execute(file1.getPath());
+		}
+
+	}
+
+	private class FakeNetLoader extends AsyncTask<String, Void, List<String>> {
+
+		InputStream is = null;
+		String json = "";
+		List<String> title_list = new ArrayList<String>();
+
+		@Override
+		protected List<String> doInBackground(String... urls) {
+
+			uploadFile(urls[0]);
+			return title_list;
+		}
+
+		@Override
+		protected void onPostExecute(List<String> result) {
+			super.onPostExecute(result);
+
+		}
+
+	}
+
+	public int uploadFile(String sourceFileUri) {
+
+		String fileName = sourceFileUri;
+
+		HttpURLConnection conn = null;
+		DataOutputStream dos = null;
+		String lineEnd = "\r\n";
+		String twoHyphens = "--";
+		String boundary = "*****";
+		int bytesRead, bytesAvailable, bufferSize;
+		byte[] buffer;
+		int maxBufferSize = 1 * 1024 * 1024;
+		File sourceFile = new File(sourceFileUri);
+
+		if (!sourceFile.isFile()) {
+
+			// dialog.dismiss();
+			//
+			// Log.e("uploadFile", "Source File not exist :"+imagepath);
+			//
+			runOnUiThread(new Runnable() {
+				public void run() {
+					// messageText.setText("Source File not exist :"+
+					// imagepath);
+				}
+			});
+
+			return 0;
+
+		} else {
+			try {
+
+				// open a URL connection to the Servlet
+				FileInputStream fileInputStream = new FileInputStream(
+						sourceFile);
+				URL url = new URL("http://128.199.125.48/file_upload.php");
+
+				// Open a HTTP connection to the URL
+				conn = (HttpURLConnection) url.openConnection();
+				conn.setDoInput(true); // Allow Inputs
+				conn.setDoOutput(true); // Allow Outputs
+				conn.setUseCaches(false); // Don't use a Cached Copy
+				conn.setRequestMethod("POST");
+				conn.setRequestProperty("Connection", "Keep-Alive");
+				conn.setRequestProperty("ENCTYPE", "multipart/form-data");
+				conn.setRequestProperty("Content-Type",
+						"multipart/form-data;boundary=" + boundary);
+				conn.setRequestProperty("uploaded_file", fileName);
+
+				dos = new DataOutputStream(conn.getOutputStream());
+
+				dos.writeBytes(twoHyphens + boundary + lineEnd);
+				dos.writeBytes("Content-Disposition: form-data; name=\"uploaded_file\";filename=\""
+						+ fileName + "\"" + lineEnd);
+
+				dos.writeBytes(lineEnd);
+
+				// create a buffer of maximum size
+				bytesAvailable = fileInputStream.available();
+
+				bufferSize = Math.min(bytesAvailable, maxBufferSize);
+				buffer = new byte[bufferSize];
+
+				// read file and write it into form...
+				bytesRead = fileInputStream.read(buffer, 0, bufferSize);
+
+				while (bytesRead > 0) {
+
+					dos.write(buffer, 0, bufferSize);
+					bytesAvailable = fileInputStream.available();
+					bufferSize = Math.min(bytesAvailable, maxBufferSize);
+					bytesRead = fileInputStream.read(buffer, 0, bufferSize);
+
+				}
+
+				// send multipart form data necesssary after file data...
+				dos.writeBytes(lineEnd);
+				dos.writeBytes(twoHyphens + boundary + twoHyphens + lineEnd);
+
+				// Responses from the server (code and message)
+				serverResponseCode = conn.getResponseCode();
+				String serverResponseMessage = conn.getResponseMessage();
+
+				// Log.i("uploadFile", "HTTP Response is : "
+				// + serverResponseMessage + ": " + serverResponseCode);
+				//
+				if (serverResponseCode == 200) {
+
+					runOnUiThread(new Runnable() {
+						public void run() {
+							// String msg =
+							// "File Upload Completed.\n\n See uploaded file here : \n\n"
+							// +" F:/wamp/wamp/www/uploads";
+							// // messageText.setText(msg);
+							// Toast.makeText(MainActivity.this,
+							// "File Upload Complete.",
+							// Toast.LENGTH_SHORT).show();
+						}
+					});
+				}
+
+				// close the streams //
+				fileInputStream.close();
+				dos.flush();
+				dos.close();
+
+			} catch (MalformedURLException ex) {
+
+				// dialog.dismiss();
+				ex.printStackTrace();
+
+				runOnUiThread(new Runnable() {
+					public void run() {
+						// messageText.setText("MalformedURLException Exception : check script url.");
+						// Toast.makeText(MainActivity.this,
+						// "MalformedURLException", Toast.LENGTH_SHORT).show();
+					}
+				});
+
+				Log.e("Upload file to server", "error: " + ex.getMessage(), ex);
+			} catch (Exception e) {
+
+				// dialog.dismiss();
+				e.printStackTrace();
+
+				runOnUiThread(new Runnable() {
+					public void run() {
+						// messageText.setText("Got Exception : see logcat ");
+						// Toast.makeText(MainActivity.this,
+						// "Got Exception : see logcat ",
+						// Toast.LENGTH_SHORT).show();
+					}
+				});
+				Log.e("Upload file to server Exception",
+						"Exception : " + e.getMessage(), e);
+			}
+			// dialog.dismiss();
+			return serverResponseCode;
+
+		} // End else block
+	}
+
 }
