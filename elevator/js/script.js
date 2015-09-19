@@ -35,6 +35,7 @@ var table=document.getElementById("excelDataTable");
 	var myTableDiv = document.getElementById("DynamicTable");
       
     var table = document.createElement('TABLE');
+table.setattribute("id","myTableData");
     table.border='1';
     
     var tableBody = document.createElement('TBODY');
@@ -68,6 +69,8 @@ xmlhttp.send();
 
 
  function DeleteRows() {
-	 
+	var index = obj.parentNode.parentNode.rowIndex;
+    var table = document.getElementById("myTableData");
+    table.deleteRow(index);
 	
  }
