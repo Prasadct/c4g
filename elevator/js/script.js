@@ -22,6 +22,11 @@ function addTableReportDisease(str) {
         dataType: 'application/json',
         complete: function(data){
             alert(data)
+            for(var i = 0; i < data.length; i++) {
+                var obj = data[i];
+                alert(obj.id, +" "+obj.des_id+" "+obj.user_id+" "+obj.crop_id+" "+obj.is_solved);
+                console.log(obj.id);
+            }
         },
         success: function(data){
             alert(data)
