@@ -30,18 +30,21 @@ xmlhttp.onreadystatechange=function()
   {
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
-//document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
-	var obj = JSON.parse(xmlhttp.responseText);
-	var result = [];
+var table=document.getElementById("excelDataTable");
+	var obj = xmlhttp.responseText;
+	var columns = addAllColumnHeaders(obj, table);
 
-for(var i in obj)
-    result.push([i,obj[i]]);
+    for (var i = 0 ; i < obj.length ; i++) {
+        var row$ = $('<tr/>');
+        for (var colIndex = 0 ; colIndex < columns.length ; colIndex++) {
+            var cellValue = obj[i][columns[colIndex]];
 
+            if (cellValue == null) { cellValue = ""; }
 
-var data = new google.visualization.DataTable();
-data.addColumn('string', 'key');
-data.addColumn('string', 'value');
-data.addRows(result);
+            row$.append($('<td/>').html(cellValue));
+        }
+        $(selector).append(row$);
+    }
 }
     }
   
@@ -50,6 +53,25 @@ xmlhttp.send();
     
     
 }
+
+function addAllColumnHeaders(myList,selector)
+{
+    var columnSet = [];
+    var headerTr$ = $('<tr/>');
+
+    for (var i = 0 ; i < myList.length ; i++) {
+        var rowHash = myList[i];
+        for (var key in rowHash) {
+            if ($.inArray(key, columnSet) == -1){
+                columnSet.push(key);
+                headerTr$.append($('<th/>').html(key));
+            }
+        }
+    }
+    $(selector).append(headerTr$);
+
+    return columnSet;
+}​
  function DeleteRows() {
 	 
 	
