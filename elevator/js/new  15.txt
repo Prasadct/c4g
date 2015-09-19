@@ -1,0 +1,13 @@
+select request.request_id, request.created_dttm, request.req_type, request.status, request.cust_prob_descr, request_unit.product_id,person.person_id, person.first_name, person.last_name, person.phone, person.email_address 
+from 
+request 
+left join 
+request_unit 
+on request.request_id = request_unit.request_id 
+left join
+task on request.request_id = task.request_id  
+outer join person 
+on task.person_id = person.person_id 
+where request.place_id = '100117' 
+order by 
+request.created_dttm desc
