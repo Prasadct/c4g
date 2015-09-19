@@ -33,7 +33,7 @@ if(isset($_GET['categoryName'])){
 </tr>
 <tr>
 <td>
-<img src="<?php  echo $row['image']; ?>" width="160" height="120">
+<img src="<?php  echo "/photos/".$row['image']; ?>" width="160" height="120">
 </td>
 </tr>
 <tr>
