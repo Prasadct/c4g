@@ -1,18 +1,21 @@
 <?php
-require_once('ConnectToDb.php');
 
-$sql = "SELECT * FROM province";
-$result = mysqli_query($conn, $sql);
+include(dir(__FILE__).".ConnectToDB.php");
 
-$province_arr = array();
+	/* grab the posts from the db */
+	 $result= mysqli_query($con,"SELECT * FROM province ");
 
-if (mysqli_num_rows($result) > 0) {
-    while($row = mysqli_fetch_assoc($result)) {
-        echo $row;
-        array_push($province_arr, array($row));
-    }
-}
+	/* create one master array of the records */
+	$posts = array();
+	if(mysqli_num_rows($result)) {
+		while($post = mysqli_fetch_array($result)) {
+			$posts[] = $post;
+		}
+	}
 
-echo json_encode($province_arr);
-
-?>
+	
+		echo json_encode($posts);
+		
+mysqli_close($con);
+	
+	?>

@@ -1,13 +1,10 @@
-<?php
-$ervername = "localhost";
-$username = "cropadvisor";
-$password = "cropadvisor";
-$dbname = "cropadvisor";
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-	die("Connection failed: " . mysqli_connect_error());
+<?php
+$con = mysqli_connect("localhost","cropadvisor","cropadvisor","cropadvisor");
+
+if (mysqli_connect_errno()) 
+{
+	echo "Failed to connect to MySQL: ". mysqli_connect_error();	
 }
 ?>
+

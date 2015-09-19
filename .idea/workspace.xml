@@ -27,13 +27,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GetAllProvince.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GetAllProvince.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GetAllProvince.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6836461">
-              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+            <state vertical-scroll-proportion="-1.3076923">
+              <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
               <folding>
-                <marker date="1442616955293" expanded="true" signature="48:70" placeholder="SELECT * FRO..province..." />
+                <marker date="1442626480215" expanded="true" signature="115:137" placeholder="SELECT * FRO..province..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetCropDetails.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/GetCropDetails.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.08847185">
+              <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+              <folding>
+                <marker date="1442626485937" expanded="true" signature="231:249" placeholder="SELECT * FRO..crop..." />
+                <marker date="1442626485937" expanded="true" signature="297:347" placeholder="SELECT * FRO..crop..." />
               </folding>
             </state>
           </provider>
@@ -54,8 +67,8 @@
       <file leaf-file-name="ConnectToDB.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ConnectToDB.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.8490567">
-              <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+            <state vertical-scroll-proportion="-0.6415094">
+              <caret line="2" column="60" selection-start-line="2" selection-start-column="60" selection-end-line="2" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -78,6 +91,7 @@
         <option value="$PROJECT_DIR$/test2.php" />
         <option value="$PROJECT_DIR$/ConnectToDB.php" />
         <option value="$PROJECT_DIR$/GetAllProvince.php" />
+        <option value="$PROJECT_DIR$/GetCropDetails.php" />
       </list>
     </option>
   </component>
@@ -477,12 +491,12 @@
       <option name="number" value="Default" />
       <updated>1442606882917</updated>
       <workItem from="1442606884238" duration="1004000" />
-      <workItem from="1442610336607" duration="5653000" />
+      <workItem from="1442610336607" duration="7658000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6657000" />
+    <option name="totallyTimeSpent" value="8662000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -531,14 +545,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ConnectToDB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.8490567">
-          <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test2.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.230769">
@@ -549,12 +555,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ConnectToDB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6415094">
+          <caret line="2" column="60" selection-start-line="2" selection-start-column="60" selection-end-line="2" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GetAllProvince.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6836461">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
           <folding>
-            <marker date="1442616955293" expanded="true" signature="48:70" placeholder="SELECT * FRO..province..." />
+            <marker date="1442626480215" expanded="true" signature="115:137" placeholder="SELECT * FRO..province..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GetCropDetails.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08847185">
+          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+          <folding>
+            <marker date="1442626485937" expanded="true" signature="231:249" placeholder="SELECT * FRO..crop..." />
+            <marker date="1442626485937" expanded="true" signature="297:347" placeholder="SELECT * FRO..crop..." />
           </folding>
         </state>
       </provider>
