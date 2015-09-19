@@ -588,8 +588,8 @@
             </div>
         </div>
         <!-- End About Us Section -->
-
-
+        
+        
         <!-- Disease section -->
         <div class="section-modal modal fade" id="service-modal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-content">
@@ -599,22 +599,23 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="container">
-                    <form action="">
-                        <select name="customers" onchange="addTableReportDisease(this.value)">
-                            <option value="">Select a crop:</option>
-                            <option value="1">Mango</option>
-                            <option value="2">Banana</option>
-                            <option value="3">Carrot</option>
-                        </select>
-                    </form>
-                    <div id="txtHint">Problem info will be listed here...</div>
-                    <div id="DynamicTable">
-                    </div>
+                   <form action=""> 
+					<select name="customers" onchange="addTable(this.value)">
+					<option value="">Select a crop:</option>
+					<option value="1">Mango</option>
+					<option value="2">Banana</option>
+					<option value="3">Carrot</option>
+					</select>
+				</form
+				<div id="txtHint">Problem info will be listed here...</div>
+				<div id="DynamicTable">
+				</div>
                 </div>
-
-
+                
+                
+                
             </div>
         </div>
         <!-- End Service Section -->
@@ -994,7 +995,7 @@
 					Message:<br>
 					<textarea id="textb" name="textarea" style="width:250px;height:150px;"></textarea>
 					<br><br>
-					<<button type="button" onclick=sendData()>Send Me</button>
+					<button type="button" onclick=sendData()>Send Me</button>
 				  </fieldset>
 				</form>
 				
