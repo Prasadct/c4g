@@ -52,10 +52,9 @@ xmlhttp.onreadystatechange=function()
 	}
 	 
   }
-xmlhttp.open("GET","http://128.199.125.48/GetDetailsForMainType.php?mainType=ReportDisease&province="+province.value+"&textval"+textB.value ,true);
+xmlhttp.open("GET","http://128.199.125.48/InsertNotification.php?province="+province.value+"&textval="+textB.value ,true);
 xmlhttp.send(); 	
  }
-
 function DeleteRows() {
 
 
