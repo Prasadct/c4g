@@ -31,10 +31,14 @@ xmlhttp.onreadystatechange=function()
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
     document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
-	
+	<ul class="list-group">
+		<li class="list-group-item">First item1</li>
+		<li class="list-group-item">Second item2</li>
+		<li class="list-group-item">Third item</li>
+	</ul>
     }
   }
-xmlhttp.open("GET","http://128.199.125.48/GetDetailsForMainType.php?mainType=ReportedDisease&cropId="+str ,true);
+xmlhttp.open("GET","http://128.199.125.48/GetDetailsForMainType.php?mainType=ReportDisease&cropId="+str ,true);
 xmlhttp.send(); 
     
     
