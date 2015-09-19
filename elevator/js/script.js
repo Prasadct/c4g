@@ -54,7 +54,7 @@ xmlhttp.onreadystatechange=function()
     myTableDiv.appendChild(table);
     }
   }
-xmlhttp.open("GET","http://128.199.125.48/GetDetailsForMainType.php?mainType=Disease&cropId="+str ,true);
+xmlhttp.open("GET","http://128.199.125.48/GetDetailsForMainType.php?mainType=ReportedDisease&cropId="+str ,true);
 xmlhttp.send(); 
     
     
