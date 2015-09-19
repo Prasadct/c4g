@@ -18,7 +18,7 @@ $(document).ready(function ($) {
 
 function addTableReportDisease(str) {
     $.ajax({
-        url: '/GetDetailsForMainType.php?mainType=ReportDisease&cropId='+str,
+        url: 'http://128.199.125.48/GetDetailsForMainType.php?mainType=ReportDisease&cropId='+str,
         dataType: 'application/json',
         complete: function(data){
             alert(data)
