@@ -1,6 +1,6 @@
 <?php
 
-include(dir(__FILE__).".ConnectToDB.php");
+include(dirname(__FILE__)."/ConnectToDB.php");
 
 	/* grab the posts from the db */
 	 $result= mysqli_query($con,"SELECT * FROM province ");
