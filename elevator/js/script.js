@@ -32,13 +32,19 @@ xmlhttp.onreadystatechange=function()
     {
 //document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
 	var obj = JSON.parse(xmlhttp.responseText);
-	for (var key in xmlhttp.responseText) {
-  if (xmlhttp.responseText.hasOwnProperty(key)) {
-    document.getElementById("txtHint").innerHTML=key + " -> " + xmlhttp.responseText[key];
-  }
+	var result = [];
+
+for(var i in obj)
+    result.push([i,obj[i]]);
+
+
+var data = new google.visualization.DataTable();
+data.addColumn('string', 'key');
+data.addColumn('string', 'value');
+data.addRows(result);
 }
     }
-  }
+  
 xmlhttp.open("GET","http://128.199.125.48/GetDetailsForMainType.php?mainType=ReportDisease&cropId="+str ,true);
 xmlhttp.send(); 
     
