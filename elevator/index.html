@@ -980,7 +980,24 @@
                         </div>
                     </div>
                 </div>
-				
+				<form >
+					<fieldset>
+					<legend>Notification Information:</legend>
+					Province:<br>
+					<select id="selector">
+					  <option value="1">Central Province</option>
+					  <option value="2">Western Province</option>
+					  <option value="3">Eastern Province</option>
+					  <option value="4">Southern Province</option>
+					  <option value="5">Northern Province</option>
+					</select>
+					<br>
+					Message:<br>
+					<textarea id="textb" name="textarea" style="width:250px;height:150px;"></textarea>
+					<br><br>
+					<<button type="button" onclick=sendData()>Send Me</button>
+				  </fieldset>
+				</form>
 				
 
                 

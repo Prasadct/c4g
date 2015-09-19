@@ -67,7 +67,27 @@ xmlhttp.send();
 }
 
 
- function DeleteRows() {
-
-	
+ function sendData(){
+	 var province= document.getElementById("selector");
+	 var textB=document.getElementById("textb");
+	 var xmlhttp;    
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+		
+		
+	}
+	 
+  }
+xmlhttp.open("GET","http://128.199.125.48/GetDetailsForMainType.php?mainType=ReportDisease&province="+province.value+"&textval"+textB.value ,true);
+xmlhttp.send(); 	
  }
