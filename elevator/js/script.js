@@ -20,9 +20,6 @@ function addTableReportDisease(str) {
     $.ajax({
         url: 'http://128.199.125.48/GetDetailsForMainType.php?mainType=ReportDisease&cropId='+str,
         dataType: 'application/json',
-        complete: function(data){
-            alert(data)
-        },
         success: function(data){
             for(var i = 0; i < data.length; i++) {
                 var obj = data[i];
@@ -30,6 +27,9 @@ function addTableReportDisease(str) {
                 alert(obj.id, +" "+obj.des_id+" "+obj.user_id+" "+obj.crop_id+" "+obj.is_solved);
                 console.log(obj.id);
             }
+        },
+        error: function (e) {
+            alert(e.trace)
         }
     });
 
