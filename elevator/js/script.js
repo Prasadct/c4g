@@ -35,15 +35,15 @@ var table=document.getElementById("excelDataTable");
 	var columns = addAllColumnHeaders(obj, table);
 
     for (var i = 0 ; i < obj.length ; i++) {
-        var row$ = $('<tr/>');
+        var rows = $('<tr/>');
         for (var colIndex = 0 ; colIndex < columns.length ; colIndex++) {
             var cellValue = obj[i][columns[colIndex]];
 
             if (cellValue == null) { cellValue = ""; }
 
-            row$.append($('<td/>').html(cellValue));
+            rows.append($('<td/>').html(cellValue));
         }
-        $(selector).append(row$);
+        $(selector).append(rows);
     }
 }
     }
