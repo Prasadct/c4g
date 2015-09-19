@@ -70,7 +70,6 @@ function addAllColumnHeaders(myList,selector)
     }
     $(selector).append(headerTr$);
 
-    return columnSet;
 }​
  function DeleteRows() {
 	 
