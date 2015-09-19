@@ -16,6 +16,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,6 +61,12 @@ public class GridViewAdapter extends ArrayAdapter {
 		}
 
 		holder.imageTitle.setText(VIDEO_TYPE_LIST.get(position));
+		if (DashBoard.languageId == 2) {
+			Typeface font = Typeface.createFromAsset(DashBoard.assetManager,
+					"FM-BINDU.TTF");
+			holder.imageTitle.setTypeface(font);
+		} 
+	
 		
 		String s = VIDEO_TYPE_IMG_URL_LIST.get(position);
 		
@@ -111,7 +118,7 @@ public class GridViewAdapter extends ArrayAdapter {
 
 				try {
 
-					URL imageUrl = new URL("http://weddingsrilanka.com/funnyvideo/image/video_type/"
+					URL imageUrl = new URL("http://128.199.125.48/photos/"
 							+ (String) urls[1]);
 					HttpURLConnection connection = (HttpURLConnection) imageUrl
 							.openConnection();
