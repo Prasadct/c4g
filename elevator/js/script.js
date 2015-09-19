@@ -68,6 +68,8 @@ xmlhttp.send();
 
 
  function DeleteRows() {
-	 
+	var index = obj.parentNode.parentNode.rowIndex;
+    var table = document.getElementById("myTableData");
+    table.deleteRow(index);
 	
  }
