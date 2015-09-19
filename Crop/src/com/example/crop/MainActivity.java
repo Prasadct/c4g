@@ -69,8 +69,13 @@ public class MainActivity extends Activity {
 					Intent intent = new Intent(MainActivity.this, Details.class);
 					startActivity(intent);
 				} else if (position == 1) {
+//					Intent intent = new Intent(MainActivity.this,
+//							WebViewActivity.class);
+//					intent.putExtra("url", "http://128.199.125.48/Project/Disease.php?cropId=1&id="+DashBoard.cropId);
+//					startActivity(intent);
+					
 					Intent intent = new Intent(MainActivity.this,
-							WebViewActivity.class);
+							Disease.class);
 					startActivity(intent);
 				} else if (position == 2) {
 					Intent intent = new Intent(MainActivity.this,

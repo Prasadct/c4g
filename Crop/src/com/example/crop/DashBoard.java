@@ -73,13 +73,15 @@ public class DashBoard extends Activity implements OnItemSelectedListener {
 	public static File directory;
 
 	String[] types = {"All", "Fruit", "Vegetable" };
-	int type = 0;
+	static public int type = 0;
+	static public int cropId = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dashboard);
 
+		
 		tv_type = (TextView) findViewById(R.id.tv_type);
 
 		gridView = (GridView) findViewById(R.id.gridView);
@@ -157,7 +159,7 @@ public class DashBoard extends Activity implements OnItemSelectedListener {
 
 				ableToExit = false;
 				int itemValue = SplashScreen.CROP_ID_LIST.get(position);
-
+				cropId=(position+1);
 				Intent i = new Intent(DashBoard.this, MainActivity.class);
 				i.putExtra("cropid", itemValue);
 				startActivity(i);

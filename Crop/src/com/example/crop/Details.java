@@ -15,8 +15,9 @@ public class Details extends Activity {
 
 	String[] detailsType_si = {"ìï ieliqu","weiSÍu","fmdfydr","lDñkdYl","c, iïmdokh","kv;a;=j","wiajekak fk,Su"};
 	String[] detailsType_en = {"Field Preparation","Packing","Fertilizer","Pesticide","Irrigation","Maintenance","Harvesting"};
-	Integer[] imageId = { R.drawable.lst, R.drawable.sd, R.drawable.rpt,R.drawable.support};
+	Integer[] imageId = { R.drawable.fieldpreparation, R.drawable.packing, R.drawable.fertilizer,R.drawable.insects,R.drawable.irrigation,R.drawable.maintanance,R.drawable.harvesting};
 	
+	String[] category={"Preparation","Packing","","","",""};
 	
 	ListView list;
 	int language;
@@ -39,6 +40,7 @@ public class Details extends Activity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				Intent intent = new Intent(Details.this, WebViewActivity.class);
+				intent.putExtra("url", "http://128.199.125.48/DetailCategoryNames.php?categoryName="+category[position]);
 				startActivity(intent);
 
 			}

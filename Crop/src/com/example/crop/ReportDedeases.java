@@ -1,5 +1,6 @@
 package com.example.crop;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.File;
@@ -7,6 +8,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -14,6 +17,16 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -27,12 +40,16 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class ReportDedeases extends Activity {
 	private ImageView mImage;
 	EditText et_des;
 	Button btn_photo, btn_submit;
 	private static final int CAMERA_PIC_REQUEST = 1111;
+
+	static String filePath = "";
+	static String des = "";
 
 	private int serverResponseCode = 0;
 
@@ -55,6 +72,27 @@ public class ReportDedeases extends Activity {
 				startActivityForResult(intent, CAMERA_PIC_REQUEST);
 			}
 		});
+
+		btn_submit.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+
+				if (!filePath.equals("") && filePath != null) {
+					FakeNetLoader fl = new FakeNetLoader();
+					fl.execute(filePath);
+				}
+
+				des = et_des.getText().toString();
+				if (!des.equals("") && des != null) {
+					ReportDeseases fl = new ReportDeseases();
+					fl.execute("http://128.199.125.48/InsertFieldDetails.php");
+				}
+
+				filePath = "";
+			}
+		});
+
 	}
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -73,13 +111,14 @@ public class ReportDedeases extends Activity {
 			if (!file.exists()) {
 				file.mkdir();
 			}
-			
+
 			Random rn = new Random();
 			int num = rn.nextInt(10000000) + 1;
-			String date=new Date().toString();
-			String imageName= date+num+".jpg";
+			String date = new Date().toString();
+			String imageName = date + num + ".jpg";
 
 			File file1 = new File(file, imageName);
+			filePath = file1.getPath();
 
 			try {
 				file1.createNewFile();
@@ -91,8 +130,7 @@ public class ReportDedeases extends Activity {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			FakeNetLoader fl = new FakeNetLoader();
-			fl.execute(file1.getPath());
+
 		}
 
 	}
@@ -208,13 +246,6 @@ public class ReportDedeases extends Activity {
 
 					runOnUiThread(new Runnable() {
 						public void run() {
-							// String msg =
-							// "File Upload Completed.\n\n See uploaded file here : \n\n"
-							// +" F:/wamp/wamp/www/uploads";
-							// // messageText.setText(msg);
-							// Toast.makeText(MainActivity.this,
-							// "File Upload Complete.",
-							// Toast.LENGTH_SHORT).show();
 						}
 					});
 				}
@@ -258,6 +289,79 @@ public class ReportDedeases extends Activity {
 			return serverResponseCode;
 
 		} // End else block
+	}
+
+	private class ReportDeseases extends AsyncTask<String, Void, List<String>> {
+
+		InputStream is = null;
+		String json = "";
+		List<String> title_list = new ArrayList<String>();
+
+		@Override
+		protected List<String> doInBackground(String... urls) {
+
+			title_list = getOutputFromUrl(urls[0]);
+			return title_list;
+		}
+
+		private List<String> getOutputFromUrl(String url) {
+
+			try {
+
+				DefaultHttpClient httpClient = new DefaultHttpClient();
+				HttpPost httpPost = new HttpPost(url);
+
+				// get values for group table form remote db
+
+				ArrayList<NameValuePair> group_nameValuePairs = new ArrayList<NameValuePair>();
+				group_nameValuePairs.add(new BasicNameValuePair("image",
+						filePath));
+				group_nameValuePairs.add(new BasicNameValuePair("description",
+						des));
+
+				httpPost.setEntity(new UrlEncodedFormEntity(
+						group_nameValuePairs));
+				HttpResponse group_httpResponse = httpClient.execute(httpPost);
+				HttpEntity group_httpEntity = group_httpResponse.getEntity();
+
+				is = group_httpEntity.getContent();
+
+				BufferedReader group_reader = new BufferedReader(
+						new InputStreamReader(is, "iso-8859-1"), 8);
+				StringBuilder group_sb = new StringBuilder();
+				String group_line = null;
+				while ((group_line = group_reader.readLine()) != null) {
+					group_sb.append(group_line + "\n");
+				}
+				is.close();
+				json = group_sb.toString();
+				Log.i("jsonnn", json);
+
+				JSONArray group_jArray = new JSONArray(json);
+
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			} catch (ClientProtocolException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+
+			} catch (Exception e) {
+				Log.e("error ", "Error  " + e.toString());
+			}
+
+			return title_list;
+		}
+
+		@Override
+		protected void onPostExecute(List<String> result) {
+			super.onPostExecute(result);
+			Toast.makeText(getApplicationContext(),
+					"Disease is successfully reported", Toast.LENGTH_LONG)
+					.show();
+
+		}
+
 	}
 
 }

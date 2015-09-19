@@ -40,6 +40,8 @@
         </activity>
         <activity android:name="ReportDedeases" >
         </activity>
+        <activity android:name="Disease" >
+        </activity>
     </application>
 
 </manifest>

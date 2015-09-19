@@ -18,7 +18,12 @@ public class WebViewActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.web_view);
+
+		Bundle extras = getIntent().getExtras();
+		String url = extras.getString("url");
+
 		webView = (WebView) findViewById(R.id.webView);
-		webView.loadData(html, "text/html", null);
+		webView.loadUrl(url);
+		setContentView(webView);
 	}
 }
