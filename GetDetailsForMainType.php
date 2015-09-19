@@ -32,7 +32,9 @@ $cropId= $_GET['cropId'] ;
 		while($post = mysqli_fetch_array($result)) {
 			$posts[] = $post;
 		}
-	}	
+	}
+
+		header('Content-Type: application/json');
 		echo json_encode($posts);
 			
 mysqli_close($con);
