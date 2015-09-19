@@ -34,7 +34,7 @@ $cropId= $_GET['cropId'] ;
 		}
 	}
 
-		header('Content-Type: application/json');
+		
 		echo json_encode($posts);
 			
 mysqli_close($con);
