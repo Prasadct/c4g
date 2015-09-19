@@ -18,18 +18,16 @@ $(document).ready(function ($) {
 
 function addTableReportDisease(str) {
     $.ajax({
+        type: 'GET',
         url: 'http://128.199.125.48/GetDetailsForMainType.php?mainType=ReportDisease&cropId='+str,
-        dataType: 'application/json',
-        success: function(data){
-            var data = JSON.parse(data);
-            for(var i = 0; i < data.length; i++) {
-                var obj =data[i];
-                alert(obj);
+        dataType: 'json',
+        success: function(data) {
+            for(var i = 0; i < data.length ; i++){
+                console.log(JSON.stringify(data[i]));
             }
         },
-        error: function (e) {
-            alert(e.trace)
-        }
+        data: {},
+        async: false
     });
 
 }
