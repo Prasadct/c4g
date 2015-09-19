@@ -32,7 +32,7 @@ xmlhttp.onreadystatechange=function()
     {
 var table=document.getElementById("excelDataTable");
 	var tags = $.parseJSON(xmlhttp.responseText);
-	var myTableDiv = document.getElementById("myDynamicTable");
+	var myTableDiv = document.getElementById("DynamicTable");
       
     var table = document.createElement('TABLE');
     table.border='1';
@@ -48,10 +48,12 @@ var table=document.getElementById("excelDataTable");
            var td = document.createElement('TD');
            td.width='75';
            td.appendChild(document.createTextNode(tags[i].crop_id));
+           tr.appendChild(td);
+
 		 var td1 = document.createElement('TD');
            td1.width='75';
            td1.appendChild(document.createTextNode(tags[i].Description));
-           tr.appendChild(td);
+           tr.appendChild(td1);
        
     }
     myTableDiv.appendChild(table);
