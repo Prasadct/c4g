@@ -35,7 +35,7 @@ if(isset($_GET['cropId'])){
 
 <tr>
 <td style="width: 224px">
-<?php echo htmlspecialchars($row['details']);?>
+<?php echo htmlspecialchars($row['details_en']);?>
 </td>
 </tr>
 

@@ -23,7 +23,7 @@ $cropId= $_GET['cropId'] ;
 	{
 		$result= mysqli_query($con,"SELECT * FROM support where crop_id = '$cropId' ");
 	}
-	
+
 
 
 	/* create one master array of the records */
@@ -32,7 +32,9 @@ $cropId= $_GET['cropId'] ;
 		while($post = mysqli_fetch_array($result)) {
 			$posts[] = $post;
 		}
-	}	
+	}
+
+
 		echo json_encode($posts);
 			
 mysqli_close($con);
