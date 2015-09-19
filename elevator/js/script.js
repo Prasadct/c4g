@@ -35,7 +35,7 @@ var table=document.getElementById("excelDataTable");
 	var myTableDiv = document.getElementById("DynamicTable");
       
     var table = document.createElement('TABLE');
-table.setattribute("id","myTableData");
+table.setAttribute("id","myTableData");
     table.border='1';
     
     var tableBody = document.createElement('TBODY');
