@@ -61,7 +61,8 @@ function addTableReportDisease(str) {
         success: function(data) {
             for(var i = 0; i < data.length ; i++){
                 console.log(JSON.stringify(data[i]));
-                $('#row_entry').after('<tr><td>'+data['title']+'</td><th>'+data['details']+'</th><th>http://128.199.125.48/photos'+data['image']+'</th><th>Status</th></tr>');
+                $('.report').hide();
+                $('#row_entry').before('<tr class="report"><td>'+data['title']+'</td><th>'+data['details']+'</th><th>http://128.199.125.48/photos'+data['image']+'</th><th>Status</th></tr>');
             }
         },
         data: {},
