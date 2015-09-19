@@ -1,6 +1,0 @@
-"Your requested RMA is currently under review.  The GSLC will contact you regarding this order."
-
-add key="ReportServerUrl" value="http://mkevmpe643/reportserver"/> 
-    <add key="ReportPath" value="/EricssonGTSDev"/> 
-    <add key="ReportUserName" value="FSMRU"/> 
-    <add key="ReportUserPassword" value="Reports1"/>
