@@ -34,7 +34,7 @@ $cropId= $_GET['cropId'] ;
 		}
 	}
 
-		
+
 		echo json_encode($posts);
 			
 mysqli_close($con);
