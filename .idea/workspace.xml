@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ff9d7a1-3fd6-47cc-861e-a9b4a73bd30c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Disease.php" afterPath="$PROJECT_DIR$/Disease.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InsertNotification.php" afterPath="$PROJECT_DIR$/InsertNotification.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elevator/index.html" afterPath="$PROJECT_DIR$/elevator/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elevator/js/script.js" afterPath="$PROJECT_DIR$/elevator/js/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="c4g.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/elevator/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-16.307692">
-              <caret line="349" column="32" selection-start-line="349" selection-start-column="32" selection-end-line="349" selection-end-column="32" />
+              <caret line="349" column="92" selection-start-line="349" selection-start-column="24" selection-end-line="349" selection-end-column="92" />
               <folding>
                 <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -77,13 +76,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Disease.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Disease.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Disease.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7371134">
+            <state vertical-scroll-proportion="-16.5">
               <caret line="37" column="44" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
               <folding>
                 <marker date="1442670880852" expanded="true" signature="492:546" placeholder="SELECT * FRO..disease..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InsertFieldDetails.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/InsertFieldDetails.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.2692308">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding>
+                <marker date="1442668081223" expanded="true" signature="183:267" placeholder="INSERT INTO ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DetailCategoryNames.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DetailCategoryNames.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1442653569297" expanded="true" signature="491:547" placeholder="SELECT * FRO..detail..." />
               </folding>
             </state>
           </provider>
@@ -93,8 +116,20 @@
         <entry file="file://$PROJECT_DIR$/elevator/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InsertNotification.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/InsertNotification.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.029209621">
+              <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
+              <folding>
+                <marker date="1442676896821" expanded="true" signature="209:303" placeholder="INSERT INTO ..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -143,9 +178,10 @@
         <option value="$PROJECT_DIR$/GetCropDetails.php" />
         <option value="$PROJECT_DIR$/GetAllProvince.php" />
         <option value="$PROJECT_DIR$/GetDetailsForMainType.php" />
-        <option value="$PROJECT_DIR$/elevator/js/script.js" />
-        <option value="$PROJECT_DIR$/elevator/index.html" />
         <option value="$PROJECT_DIR$/Disease.php" />
+        <option value="$PROJECT_DIR$/elevator/index.html" />
+        <option value="$PROJECT_DIR$/elevator/js/script.js" />
+        <option value="$PROJECT_DIR$/InsertNotification.php" />
       </list>
     </option>
   </component>
@@ -560,12 +596,12 @@
       <updated>1442606882917</updated>
       <workItem from="1442606884238" duration="1004000" />
       <workItem from="1442610336607" duration="14476000" />
-      <workItem from="1442657811162" duration="10320000" />
+      <workItem from="1442657811162" duration="14425000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25800000" />
+    <option name="totallyTimeSpent" value="29905000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -718,18 +754,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elevator/js/script.js">
+    <entry file="file://$PROJECT_DIR$/Disease.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.5">
+          <caret line="37" column="44" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
+          <folding>
+            <marker date="1442670880852" expanded="true" signature="492:546" placeholder="SELECT * FRO..disease..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InsertFieldDetails.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2692308">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <marker date="1442668081223" expanded="true" signature="183:267" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DetailCategoryNames.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1442653569297" expanded="true" signature="491:547" placeholder="SELECT * FRO..detail..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/elevator/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.307692">
-          <caret line="349" column="32" selection-start-line="349" selection-start-column="32" selection-end-line="349" selection-end-column="32" />
+          <caret line="349" column="92" selection-start-line="349" selection-start-column="24" selection-end-line="349" selection-end-column="92" />
           <folding>
             <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -745,12 +803,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Disease.php">
+    <entry file="file://$PROJECT_DIR$/elevator/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7371134">
-          <caret line="37" column="44" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InsertNotification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.029209621">
+          <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
           <folding>
-            <marker date="1442670880852" expanded="true" signature="492:546" placeholder="SELECT * FRO..disease..." />
+            <marker date="1442676896821" expanded="true" signature="209:303" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>

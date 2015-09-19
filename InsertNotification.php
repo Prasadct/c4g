@@ -1,5 +1,5 @@
 <?php  
-include( dirname(__FILE__)."/ConnectToDb.php");
+include( dirname(__FILE__)."/ConnectToDB.php");
 
 $provinceid= $_GET['province'];
 $description= $_GET['textval'];
