@@ -35,8 +35,19 @@
         <script src="js/jqBootstrapValidation.js"></script>
         <script src="js/modernizr.custom.js"></script>
         <script src="js/script.js"></script>
-
-        <!--[if lt IE 9]>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(51.508742,-0.120850),
+    zoom:5,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+    <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
@@ -70,8 +81,8 @@
                         
                         
                         
-                        <div class="menu-item green">
-                            <a href="#portfolio-modal" data-toggle="modal">
+                        <div class="menu-item green"  >
+                            <a href="http://128.199.125.48/elevator/geo.html" data-toggle="modal">
                                 <i class="fa fa-file-photo-o"></i>
                                 <p>GeoTagging</p>
                             </a>
@@ -293,7 +304,7 @@
         
         
         <!-- Start Portfolio Section -->
-        <div class="section-modal modal fade" id="portfolio-modal" tabindex="-1" role="dialog" aria-hidden="true" align="center">
+        <div class="section-modal modal fade" id="portfolio-modal" tabindex="-1" role="dialog" aria-hidden="true" align="center" >
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">
                     <div class="lr">
@@ -301,8 +312,8 @@
                         </div>
                     </div>
                 </div>
-                
-
+                <div id="googleMap" style="width:500px;height:380px;"></div>
+				<script>initialize();</script>
                 
             </div>
         </div>
