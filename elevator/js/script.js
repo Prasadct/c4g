@@ -31,32 +31,26 @@ xmlhttp.onreadystatechange=function()
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
 var table=document.getElementById("excelDataTable");
-	var tags = $.parseJSON(xmlhttp.responseText);
-	var myTableDiv = document.getElementById("DynamicTable");
-            
-        var table = document.createElement('TABLE');
-        table.border='1';
-        
-        var tableBody = document.createElement('TBODY');
-        table.appendChild(tableBody);
-            
-        for (var i=0; i<3; i++){
-              var tr = document.createElement('TR');
-              tableBody.appendChild(tr);
-        
-              
-                      var td = document.createElement('TD');
-                      td.width='75';
-                      td.appendChild(document.createTextNode(tags[i].crop_id));
-                      tr.appendChild(td);
-
-		  var td1 = document.createElement('TD');
-                      td1.width='75';
-                      td1.appendChild(document.createTextNode(tags[i].Description));
-                      tr.appendChild(td1);
-              
-        }
-        myTableDiv.appendChild(table);
+var tags = $.parseJSON(xmlhttp.responseText);
+var myTableDiv = document.getElementById("DynamicTable");
+var table = document.createElement('TABLE');
+table.border='1';
+var tableBody = document.createElement('TBODY');
+table.appendChild(tableBody);
+for (var i=0; i<3; i++){
+var tr = document.createElement('TR');
+tableBody.appendChild(tr);
+var td = document.createElement('TD');
+td.width='75';
+td.appendChild(document.createTextNode(tags[i].crop_id));
+tr.appendChild(td);
+var td1 = document.createElement('TD');
+                     td1.width='75';
+                     td1.appendChild(document.createTextNode(tags[i].Description));
+                     tr.appendChild(td1);
+             
+       }
+       myTableDiv.appendChild(table);
 }
     }
   
