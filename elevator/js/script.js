@@ -30,8 +30,13 @@ xmlhttp.onreadystatechange=function()
   {
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
-    document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
-	
+//document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+	var obj = JSON.parse(xmlhttp.responseText);
+	for (var key in xmlhttp.responseText) {
+  if (xmlhttp.responseText.hasOwnProperty(key)) {
+    document.getElementById("txtHint").innerHTML=key + " -> " + xmlhttp.responseText[key];
+  }
+}
     }
   }
 xmlhttp.open("GET","http://128.199.125.48/GetDetailsForMainType.php?mainType=ReportDisease&cropId="+str ,true);
