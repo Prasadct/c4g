@@ -88,8 +88,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
                             </a>
                         </div>
                         
-                        <div class="menu-item light-red">
-                            <a href="#about-modal" data-toggle="modal">
+                        <div class="menu-item light-red" onclick=video(this.document,this.window)>
+                            <a href="#about-modal" data-toggle="modal" >
                                 <i class="fa fa-video-camera "></i>
                                 <p>Support</p>
                             </a>
@@ -329,11 +329,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
                         </div>
                     </div>
                 </div>
-				<div>Code 4 Good Team Pending Presents<div>
-                <div class="container" style="width: 100%;">
-                        <!-- BEGIN Embed Code -->
-                        <script>
-                            (function(d, w) {
+				
+<script>
+                            function video(d, w) {
                                 var x = d.getElementsByTagName('SCRIPT')[0];
                                 var f = function () {
                                     var s = d.createElement('SCRIPT');
@@ -356,21 +354,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
                                 };
                                 w.attachEvent ? w.attachEvent('onload', f) : w.addEventListener('load', f, false);
 
-                                var element = document.getElementById("voiceDiv");
+                                var element = document.getElementById("ovx-player");
                                 element.outerHTML = "";
                                 delete element;
-                            }(document, window));
+                            };
                         </script>
-                        <script>
-                            $("#voiceDiv").load(function() {
-                                $("#voiceDiv").hide();
-                            });
-                        </script>
+                        
 
                         <!-- END Embed Code -->
                     <div id='ovx-player' style='width:600px; height:320px;'></div>
-
-                </div>
 
             </div>
         </div>
@@ -565,7 +557,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 					</select>
 					<br>
 					Message:<br>
-					<textarea id="textb" name="textarea" rows="10" cols="100"></textarea>
+					<textarea id="textb" name="textarea" cols=5></textarea>
 					<br><br>
 					<button type="button" onclick=sendData()>Send Me</button>
 				  </fieldset>
