@@ -26,7 +26,7 @@ if(isset($_GET['cropId'])){
 <table align="center">
 <tr>
 <td>
-<img src="<?php  echo $row['image']; ?>" width="160" height="120">
+<img src="<?php  echo "/photos/".$row['image']; ?>" width="160" height="120">
 </td>
 
 </tr>
