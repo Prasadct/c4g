@@ -107,7 +107,10 @@ fieldset[disabled] .btn-primary.active {
     font-weight: 300;
 }
 
-
+#map {
+    width: 500px;
+	height: 400px;
+}
 /**** Start Logo Section ****/
 
 #logo-section {

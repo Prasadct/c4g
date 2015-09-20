@@ -1,8 +1,8 @@
 <?php  
 include( dirname(__FILE__)."/ConnectToDB.php");
 
-$description= $_GET['description'];
-$image= $_GET['image'];
+$description= $_REQUEST['description'];
+$image= $_REQUEST['image'];
 
 //Save
   /* grab the posts from the db */
