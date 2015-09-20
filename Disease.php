@@ -15,7 +15,7 @@ include( dirname(__FILE__)."/ConnectToDB.php");
 if(isset($_GET['cropId'])){
     $crop_id = $_GET['cropId'];
 	$id = $_GET['id'];
-    
+    $language = $_GET['language'];
      $result = mysqli_query($con,"SELECT * FROM disease where crop_id='$crop_id' and id=$id");
      $row = mysqli_fetch_array($result);
 
@@ -35,7 +35,18 @@ if(isset($_GET['cropId'])){
 
 <tr>
 <td style="width: 224px">
-<?php echo htmlspecialchars($row['details_en']);?>
+
+    <?php
+    if ($language=="si")
+    {
+
+        echo $row['details_si'];
+    }
+    else
+    {
+        echo $row['details_en'];
+    }
+    ?>
 </td>
 </tr>
 
