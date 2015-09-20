@@ -17,6 +17,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,7 +34,7 @@ public class UserProfile extends Activity implements OnItemSelectedListener {
 	
 	String name,tel,prov,email;
 
-	Button btn_add;
+	ImageButton btn_add;
  
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +53,12 @@ public class UserProfile extends Activity implements OnItemSelectedListener {
 		et_email = (EditText) findViewById(R.id.et_email);
 		
 		
-		btn_add=(Button)findViewById(R.id.btn_add);
-
+		btn_add=(ImageButton)findViewById(R.id.btn_add);
+		
 		if (getLanguage() == 2) {
 			province = Arrays.asList(province_si);
-
+			btn_add.setBackgroundResource(R.drawable.add_si);
+			
 			tv_profile.setText("Tnf.a úia;r");
 			tv_name.setText("ku");
 			tv_phone.setText("ÿrl:k wxlh");
@@ -71,6 +73,7 @@ public class UserProfile extends Activity implements OnItemSelectedListener {
 
 		} else {
 			province = Arrays.asList(province_en);
+			btn_add.setBackgroundResource(R.drawable.add_si);
 		}
 
 

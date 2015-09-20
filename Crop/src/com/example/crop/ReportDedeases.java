@@ -31,6 +31,10 @@ import org.json.JSONArray;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
@@ -39,30 +43,61 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class ReportDedeases extends Activity {
+public class ReportDedeases extends Activity implements LocationListener{
 	private ImageView mImage;
 	EditText et_des;
-	Button btn_photo, btn_submit;
+	ImageButton btn_photo, btn_submit;
 	private static final int CAMERA_PIC_REQUEST = 1111;
 
 	static String filePath = "";
 	static String des = "";
+	TextView tv_main;
 
+	static String imageName;
 	private int serverResponseCode = 0;
+	
+    private static final long MINIMUM_DISTANCE_CHANGE_FOR_UPDATES = 1; // in Meters
+    private static final long MINIMUM_TIME_BETWEEN_UPDATES = 1000; // in Milliseconds
+    
+    protected Button retrieveLocationButton;
+    private LocationManager locationManager;
+    private String provider;
+    Location location;
+    
+    static double latitude;
+    static double longitude;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.report_deseases);
 
+		getlocation();
+		
+		tv_main=(TextView)findViewById(R.id.tv_main);
+		
 		et_des = (EditText) findViewById(R.id.et_des);
 		mImage = (ImageView) findViewById(R.id.camera_image);
-		btn_photo = (Button) findViewById(R.id.btn_photo);
-		btn_submit = (Button) findViewById(R.id.btn_submit);
+		btn_photo = (ImageButton) findViewById(R.id.btn_photo);
+		btn_submit = (ImageButton) findViewById(R.id.btn_submit);
 
+		if(DashBoard.languageId==2){
+			btn_submit.setBackgroundResource(R.drawable.send_si);
+			tv_main.setText("frda. jd¾;d lsÍu");
+			Typeface font = Typeface.createFromAsset(DashBoard.assetManager,
+					"FM-BINDU.TTF");
+			tv_main.setTypeface(font);
+		}
+		else{
+			btn_submit.setBackgroundResource(R.drawable.send_en);
+		}
+		
+		
 		btn_photo.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -89,7 +124,7 @@ public class ReportDedeases extends Activity {
 					fl.execute("http://128.199.125.48/InsertFieldDetails.php");
 				}
 
-				filePath = "";
+				
 			}
 		});
 
@@ -115,7 +150,7 @@ public class ReportDedeases extends Activity {
 			Random rn = new Random();
 			int num = rn.nextInt(10000000) + 1;
 			String date = new Date().toString();
-			String imageName = date + num + ".jpg";
+			imageName = date + num + ".jpg";
 
 			File file1 = new File(file, imageName);
 			filePath = file1.getPath();
@@ -315,10 +350,14 @@ public class ReportDedeases extends Activity {
 
 				ArrayList<NameValuePair> group_nameValuePairs = new ArrayList<NameValuePair>();
 				group_nameValuePairs.add(new BasicNameValuePair("image",
-						filePath));
+						imageName));
 				group_nameValuePairs.add(new BasicNameValuePair("description",
 						des));
-
+				group_nameValuePairs.add(new BasicNameValuePair("latitude",
+						latitude+""));
+				group_nameValuePairs.add(new BasicNameValuePair("longitude",
+						longitude+""));
+				imageName = "";
 				httpPost.setEntity(new UrlEncodedFormEntity(
 						group_nameValuePairs));
 				HttpResponse group_httpResponse = httpClient.execute(httpPost);
@@ -364,4 +403,98 @@ public class ReportDedeases extends Activity {
 
 	}
 
+	
+	
+	 private Location getlocation(){
+	    	try
+	        {  
+	    		
+	    		
+	            locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+
+	            // getting GPS status
+	           boolean isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+
+	            // getting network status
+	           boolean  isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+
+	            if (!isGPSEnabled && !isNetworkEnabled)
+	            {
+	                // no network provider is enabled
+	            }
+	            else
+	            {
+	               // this.canGetLocation = true;
+	                if (isNetworkEnabled)
+	                {
+	                    locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MINIMUM_TIME_BETWEEN_UPDATES, MINIMUM_DISTANCE_CHANGE_FOR_UPDATES,  this);
+//	                    Log.d("Network", "Network");
+	                    if (locationManager != null)
+	                    {
+	                        location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+	                        if (location != null)
+	                        {
+	                            latitude = location.getLatitude();
+	                            longitude = location.getLongitude();
+	                        }
+	                    }
+	                }
+	                // if GPS Enabled get lat/long using GPS Services
+	                if (isGPSEnabled)
+	                {
+	                    if (location == null)
+	                    {
+	                        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, MINIMUM_TIME_BETWEEN_UPDATES, MINIMUM_DISTANCE_CHANGE_FOR_UPDATES,  this);
+//	                        Log.d("GPS Enabled", "GPS Enabled");
+	                        if (locationManager != null)
+	                        {
+	                            location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+	                            if (location != null)
+	                            {
+	                                latitude = location.getLatitude();
+	                                longitude = location.getLongitude();
+	                            }
+	                        }
+	                    }
+	                }
+	            }
+
+	        }
+	        catch (Exception e)
+	        {
+	            e.printStackTrace();
+	        }
+
+	        return location;
+
+	   
+	    }
+
+	@Override
+	public void onLocationChanged(Location location) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onProviderDisabled(String provider) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onProviderEnabled(String provider) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onStatusChanged(String provider, int status, Bundle extras) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	
+	
 }

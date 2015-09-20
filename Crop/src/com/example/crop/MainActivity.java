@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,6 +18,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -24,6 +26,8 @@ public class MainActivity extends Activity {
 	int language = 1;
 	String[] mainList;
 
+	TextView tv_main;
+	
 	private String[] setMailList(int language) {
 
 		Resources resources = getResources();
@@ -37,6 +41,10 @@ public class MainActivity extends Activity {
 		if (language == 1) {
 			return mainListEnglish;
 		} else if (language == 2) {
+			tv_main.setText("m%Odk fukqj");
+			Typeface font = Typeface.createFromAsset(DashBoard.assetManager,
+					"FM-BINDU.TTF");
+			tv_main.setTypeface(font);
 			return mainListSinhala;
 		} else if (language == 3) {
 			return getMainListTamil;
@@ -54,6 +62,9 @@ public class MainActivity extends Activity {
 		final Context context = this;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		tv_main=(TextView)findViewById(R.id.tv_main);
+		
 		language = DashBoard.languageId;
 		MainList adapter = new MainList(MainActivity.this,
 				setMailList(language), imageId);

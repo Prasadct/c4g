@@ -5,14 +5,16 @@ import java.util.List;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class Details extends Activity {
-
+	TextView tv_main;
 	String[] detailsType_si = {"ìï ieliqu","weiSÍu","fmdfydr","lDñkdYl","c, iïmdokh","kv;a;=j","wiajekak fk,Su"};
 	String[] detailsType_en = {"Field Preparation","Packing","Fertilizer","Pesticide","Irrigation","Maintenance","Harvesting"};
 	Integer[] imageId = { R.drawable.fieldpreparation, R.drawable.packing, R.drawable.fertilizer,R.drawable.insects,R.drawable.irrigation,R.drawable.maintanance,R.drawable.harvesting};
@@ -27,7 +29,7 @@ public class Details extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.details);
 
-		
+		tv_main=(TextView)findViewById(R.id.tv_main);
 		
 		language = DashBoard.languageId;
 		MainList adapter = new MainList(Details.this,
@@ -53,6 +55,10 @@ public class Details extends Activity {
 		if (language == 1) {
 			return detailsType_en;
 		} else if (language == 2) {
+			tv_main.setText("fnda.h ms,sn| f;dr;=re");
+			Typeface font = Typeface.createFromAsset(DashBoard.assetManager,
+					"FM-BINDU.TTF");
+			tv_main.setTypeface(font);
 			return detailsType_si;
 		}
 		return detailsType_en;

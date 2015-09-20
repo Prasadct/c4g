@@ -21,12 +21,14 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class Disease extends Activity{
 	
@@ -37,12 +39,14 @@ public class Disease extends Activity{
 	public static String[] image ;
 	public static int[] ids ;
 	
-	
+	TextView tv_main;
 	ListView list;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.disease);
+		
+		tv_main=(TextView)findViewById(R.id.tv_main);
 		
 		FakeNetLoader fl = new FakeNetLoader();
 		fl.execute("http://128.199.125.48/GetDetailsForMainType.php?mainType=Disease&cropId="+DashBoard.cropId);
@@ -75,6 +79,10 @@ public class Disease extends Activity{
 		if (language == 1) {
 			return name_si;
 		} else if (language == 2) {
+			tv_main.setText("frda.hka");
+			Typeface font = Typeface.createFromAsset(DashBoard.assetManager,
+					"FM-BINDU.TTF");
+			tv_main.setTypeface(font);
 			return name_en;
 		}
 		return name_en;

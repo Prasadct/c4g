@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -19,28 +20,45 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".SplashScreen"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="MainActivity" >
+        <activity
+            android:name="MainActivity"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name="Language" >
+        <activity
+            android:name="Language"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name="DashBoard" >
+        <activity
+            android:name="DashBoard"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name="UserProfile" >
+        <activity
+            android:name="UserProfile"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name="WebViewActivity" >
+        <activity
+            android:name="WebViewActivity"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name="Details" >
+        <activity
+            android:name="Details"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name="ReportDedeases" >
+        <activity
+            android:name="ReportDedeases"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name="Disease" >
+        <activity
+            android:name="Disease"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 

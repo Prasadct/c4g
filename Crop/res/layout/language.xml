@@ -6,7 +6,13 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="0.2" >
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
         android:layout_weight="1" >
 
         <ImageButton
@@ -18,13 +24,13 @@
             android:layout_marginRight="30dp"
             android:layout_marginTop="40dp"
             android:background="@null"
-            android:scaleType="fitXY"
+            android:scaleType="fitCenter"
             android:src="@drawable/english" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dip"
         android:layout_weight="1" >
 
         <ImageButton
@@ -36,13 +42,13 @@
             android:layout_marginRight="30dp"
             android:layout_marginTop="40dp"
             android:background="@null"
-            android:scaleType="fitXY"
+            android:scaleType="fitCenter"
             android:src="@drawable/sinhala" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dip"
         android:layout_weight="1" >
 
         <ImageButton
@@ -54,9 +60,14 @@
             android:layout_marginRight="30dp"
             android:layout_marginTop="40dp"
             android:background="@null"
-            android:scaleType="fitXY"
+            android:scaleType="fitCenter"
             android:src="@drawable/tamil" />
+    </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="0.2" >
     </RelativeLayout>
 
 </LinearLayout>

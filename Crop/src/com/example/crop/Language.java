@@ -34,7 +34,7 @@ public class Language extends Activity {
 				Intent i = new Intent(Language.this, UserProfile.class);
 				startActivity(i);
 
-			}
+			} 	
 		});
 
 		btn_si.setOnClickListener(new OnClickListener() {
