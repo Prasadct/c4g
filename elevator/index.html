@@ -357,15 +357,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
                                 w.attachEvent ? w.attachEvent('onload', f) : w.addEventListener('load', f, false);
 
                                 var element = document.getElementById("voiceDiv");
-                                element.outerHTML = "";
+                                element.outerHTML = "<div></div>";
                                 delete element;
                             }(document, window));
                         </script>
-                        <script>
-                            $("#voiceDiv").load(function() {
-                                $("#voiceDiv").hide();
-                            });
-                        </script>
+                        
 
                         <!-- END Embed Code -->
                     <div id='ovx-player' style='width:600px; height:320px;'></div>
