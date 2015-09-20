@@ -2,9 +2,11 @@
 
 include( dirname(__FILE__)."/ConnectToDB.php");
 
-
+$actionType = $_REQUEST['actionType'] ;
+if ($actionType="select")
+{
 	/* grab the posts from the db */
-	 $result= mysqli_query($con,"SELECT * FROM notification ");
+	 $result= mysqli_query($con,"SELECT * FROM notification where isupdated=0 ");
 
 	/* create one master array of the records */
 	$posts = array();
@@ -14,7 +16,11 @@ include( dirname(__FILE__)."/ConnectToDB.php");
 		}
 	}	
 		echo json_encode($posts);
-		
+		}
+		elseif ($actionType="update")
+		{
+			mysqli_query($con,"UPDATE `notification` SET isupdated=1 ");
+		}
 mysqli_close($con);
 	
 	?>
