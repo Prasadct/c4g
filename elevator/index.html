@@ -363,14 +363,16 @@ google.maps.event.addDomListener(window, 'load', initialize);
                             }(document, window));
                         </script>
                         <script>
-
+                            $("#voiceDiv").load(function() {
+                                $("#voiceDiv").hide();
+                            });
                         </script>
 
                         <!-- END Embed Code -->
                     </center>
                     <div id='ovx-player' style='width:600px; height:320px;'></div>
 
-                </>
+                </div>
                 
             </div>
         </div>
