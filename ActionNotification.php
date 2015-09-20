@@ -2,8 +2,8 @@
 
 include( dirname(__FILE__)."/ConnectToDB.php");
 
-$actionType = $_REQUEST['actionType'] ;
-if ($actionType="select")
+$actionType = $_GET['actionType'] ;
+if ($actionType=="select")
 {
 	/* grab the posts from the db */
 	 $result= mysqli_query($con,"SELECT * FROM notification where isupdated=0 ");
@@ -17,7 +17,7 @@ if ($actionType="select")
 	}	
 		echo json_encode($posts);
 		}
-		elseif ($actionType="update")
+		elseif ($actionType=="update")
 		{
 			mysqli_query($con,"UPDATE `notification` SET isupdated=1 ");
 		}
