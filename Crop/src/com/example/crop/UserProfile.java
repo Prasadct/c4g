@@ -24,7 +24,7 @@ import android.widget.Toast;
 
 public class UserProfile extends Activity implements OnItemSelectedListener {
 
-	List<String> province = new ArrayList<>();
+	List<String> province = new ArrayList<String>();
 	String[] province_en = { "aa", "ddd", "sssd", "ss" };
 	String[] province_si = { "aa", "ddd", "sssd", "ss" };
 
@@ -59,9 +59,9 @@ public class UserProfile extends Activity implements OnItemSelectedListener {
 			province = Arrays.asList(province_si);
 			btn_add.setBackgroundResource(R.drawable.add_si);
 			
-			tv_profile.setText("Tnf.a úia;r");
+			tv_profile.setText("Tnf.a ï¿½ia;r");
 			tv_name.setText("ku");
-			tv_phone.setText("ÿrl:k wxlh");
+			tv_phone.setText("ï¿½rl:k wxlh");
 			tv_province.setText("m<d;");
 
 			Typeface font = Typeface.createFromAsset(getAssets(), "FM-BINDU.TTF");

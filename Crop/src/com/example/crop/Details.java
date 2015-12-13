@@ -15,7 +15,8 @@ import android.widget.TextView;
 
 public class Details extends Activity {
 	TextView tv_main;
-	String[] detailsType_si = {"�� ieliqu","weiS�u","fmdfydr","lD�kdYl","c, i�mdokh","kv;a;=j","wiajekak fk,Su"};
+//	String[] detailsType_si = {"�� ieliqu","weiS�u","fmdfydr","lD�kdYl","c, i�mdokh","kv;a;=j","wiajekak fk,Su"};
+    String[] detailsType_si = {"බිම් සැකසුම", "ඇසිරීම", "පොහර", "කෘමිනාශක", "ජල සම්පාදන", "නඩත්තුව",  "අස්වැන්න නෙලීම"};
 	String[] detailsType_en = {"Field Preparation","Packing","Fertilizer","Pesticide","Irrigation","Maintenance","Harvesting"};
 	Integer[] imageId = { R.drawable.fieldpreparation, R.drawable.packing, R.drawable.fertilizer,R.drawable.insects,R.drawable.irrigation,R.drawable.maintanance,R.drawable.harvesting};
 	

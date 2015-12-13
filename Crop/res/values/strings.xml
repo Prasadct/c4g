@@ -12,10 +12,14 @@
         <item>Support</item>
     </string-array>
     <string-array name="main_list_items_SI">
-        <item>fnda.h ms,sn| f;dr;=re</item>
-        <item>frda.hka</item>
-        <item>frda. jd¾;d lsÍu</item>
-        <item>Wmldr</item>
+        <!--<item>fnda.h ms,sn| f;dr;=re</item>-->
+        <!--<item>frda.hka</item>-->
+        <!--<item>frda. jd¾;d lsÍu</item>-->
+        <!--<item>Wmldr</item>-->
+        <item>බෝගය පිලිබඳ තොරතුරු</item>
+        <item>රෝගයන්</item>
+        <item>රෝග වාර්තා කිරීම</item>
+        <item>උපකාර </item>
     </string-array>
     <string-array name="main_list_items_TA">
         <item>Crop Details_TA</item>

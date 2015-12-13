@@ -73,10 +73,12 @@ public class SplashScreen extends Activity {
 
 			@Override
 			public void run() {
-				isThreadDone = true;
-				invokeHome();
+                if (HAVE_CONNECTION){
+                    isThreadDone = true;
+                    invokeHome();
 
-				finish();
+                    finish();
+                }
 			}
 		}, SPLASH_TIME_OUT);
 	}
@@ -177,8 +179,8 @@ public class SplashScreen extends Activity {
 		builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 
 			public void onClick(DialogInterface dialog, int which) {
-				startActivityForResult(new Intent(
-						android.provider.Settings.ACTION_SETTINGS), 0);
+				//startActivityForResult(new Intent(
+					//	android.provider.Settings.ACTION_SETTINGS), 0);
 
 				System.exit(0);
 			}

@@ -88,7 +88,7 @@ public class ReportDedeases extends Activity implements LocationListener{
 
 		if(DashBoard.languageId==2){
 			btn_submit.setBackgroundResource(R.drawable.send_si);
-			tv_main.setText("frda. jd¾;d lsÍu");
+			tv_main.setText("frda. jdï¿½;d lsï¿½u");
 			Typeface font = Typeface.createFromAsset(DashBoard.assetManager,
 					"FM-BINDU.TTF");
 			tv_main.setTypeface(font);

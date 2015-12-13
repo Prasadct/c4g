@@ -1,10 +1,10 @@
 package com.example.crop;
 
-import com.example.crop.R;
-import com.example.crop.R.array;
-import com.example.crop.R.drawable;
-import com.example.crop.R.id;
-import com.example.crop.R.layout;
+//import com.example.crop.R;
+//import com.example.crop.R.array;
+//import com.example.crop.R.drawable;
+//import com.example.crop.R.id;
+//import com.example.crop.R.layout;
 
 import android.app.Activity;
 import android.content.Context;
