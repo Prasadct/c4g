@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:id="@+id/prof_menu"
+        android:icon="@drawable/prof"
+        android:title="තොරතුරු"
+        android:showAsAction="always"/>
+    <item android:id="@+id/key_search_menu"
+        android:icon="@drawable/search"
+        android:title="සොයන්න"
+        android:showAsAction="always" />
+
+
+</menu>

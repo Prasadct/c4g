@@ -1,0 +1,46 @@
+#header {
+    background-color:green;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#section {
+    width:100%;
+    float:left;
+    padding:10px;
+}
+#footer {
+    background-color:green;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    padding-right: 5%;
+}
+
+@font-face {
+    font-family: dl_paras;
+    src: url(DL_PARAS.TTF);
+}
+
+body {
+    font-family: dl_paras;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    border: none;
+    text-align: left;
+    padding: 8px;
+}
