@@ -7,6 +7,5 @@ This application act as a client application of [crop-service](https://github.co
 Mobile application is developed using Android Studio. 
  - _compileSdkVersion 24_   
  - _buildToolsVersion "24.0.0"_
- - _applicationId "lk.prasad.crop"_
  - _minSdkVersion 15_
  - _targetSdkVersion 24_
