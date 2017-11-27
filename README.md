@@ -9,3 +9,5 @@ Mobile application is developed using Android Studio.
  - _buildToolsVersion "24.0.0"_
  - _minSdkVersion 15_
  - _targetSdkVersion 24_
+
+Each of Android activity named in a meamingful manner thus the functionaliy of each activity can undersdand easily.
