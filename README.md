@@ -11,4 +11,4 @@ Mobile application is developed using Android Studio.
  - _targetSdkVersion 24_
 
 Each of Android activity named in a meamingful manner thus the functionaliy of each activity can undersdand easily.
-Service IP address and HTTP Port need to congigured before building the application. SQLite database and Android file system is used to as the application storage. 
+Service IP address and HTTP Port need to configured before building the application. SQLite database and Android file system is used to as the application storage. 
